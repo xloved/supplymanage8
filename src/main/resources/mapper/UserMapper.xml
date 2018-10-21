@@ -25,14 +25,14 @@
         </delete>
          <!-- void updateUser(Users users);-->
           <update id="updateUser" parameterType="users">
-                update users set uname=#{uname},upwd=#{upwd},usersname=#{usersname}
+             update users set uname=#{uname},upwd=#{upwd},usersname=#{usersname}
               <where>
                   usersid=#{usersid}
               </where>
           </update>
 
            <!--Users queryOne(Integer usersid);-->
-           <select id="">
+           <select id="queryOne" resultType="users" parameterType="Integer">
                 select * from users
                <where>
                     usersid=#{usersid}

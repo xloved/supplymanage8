@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.supply.supplymanage.dao.RoleMapper">
+         <!--List<Map> queryRole();-->
+        <select id="queryRole" resultType="java.util.Map">
+                select r.roleid,r.rolename,r.rolewrite from users u,user_role ur,role r,
+                   role_permission rp,permission p where
+                  u.usersid=ur.usersid and
+                  ur.roleid=r.roleid and
+                  r.roleid=rp.roleid and
+                  rp.rpid=p.perid
+
+        </select>
+</mapper>

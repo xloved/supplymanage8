@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.supply.supplymanage.dao.LoginMapper">
+
+    <!--Users getByUsersLogin(@Param("uname") String uname, @Param("upwd") String upwd);-->
+        <select id="getByUsersLogin" resultType="users" parameterType="String">
+                  select * from users where uname=#{uname} and upwd=#{upwd}
+        </select>
+
+    <!-- List<Map> getRoles(@Param("uname") String uname);-->
+    <select id="getRoles" resultType="users" parameterType="String">
+           select r.rolename from users u left join user_role ur on u.usersid=ur.usersid
+            left join role r on  ur.roleid=r.roleid
+            <where>
+                u.uname=#{uname}
+            </where>
+    </select>
+
+    <!--List<Map> getPermission(@Param("uname") String uname);-->
+    <select id="getPermission" resultType="users" parameterType="String">
+              select p.pername,p.url from users u,user_role ur,role r,
+                   role_permission rp,permission p where
+                  u.usersid=ur.usersid and
+                  ur.roleid=r.roleid and
+                  r.roleid=rp.roleid and
+                  rp.rpid=p.perid and
+                  u.uname=#{uname}
+    </select>
+
+    <!-- List<Map> queryRoles(String rolename);-->
+    <select id="queryRoles" resultType="java.util.Map" parameterType="String">
+           select rolename from  role where rolename=#{rolename}
+    </select>
+
+
+</mapper>

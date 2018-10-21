@@ -243,7 +243,7 @@
             <ul class="nav ace-nav">
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <span  class="time"><em id="time"></em></span><span class="user-info"><small>欢迎光临,</small>超级管理员</span>
+                        <span  class="time"><em id="time"></em></span><span class="user-info"><small>欢迎光临,</small>${uname}</span>
                         <i class="icon-caret-down"></i>
                     </a>
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
@@ -369,7 +369,7 @@
                     <li><a href="#" class="dropdown-toggle"><i class="icon-group"></i><span class="menu-text"> 管理员管理 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
 
-                            <li class="home"><a href="javascript:void(0)" name="admin_Competence.html" title="权限管理"  class="iframeurl"><i class="icon-double-angle-right"></i>权限管理</a></li>
+                            <li class="home"><a href="javascript:void(0)" name="/jsp/queryRole.jsp" title="权限管理"  class="iframeurl"><i class="icon-double-angle-right"></i>权限管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="administrator.html" title="管理员列表" class="iframeurl"><i class="icon-double-angle-right"></i>管理员列表</a></li>
                             <li class="home"><a href="javascript:void(0)" name="/jsp/addUsers.jsp" title="用户信息" class="iframeurl"><i class="icon-double-angle-right"></i>用户信息</a></li>
                             <li class="home"><a href="javascript:void(0)" name="/jsp/queryUser.jsp" title="用户信息查看" class="iframeurl"><i class="icon-double-angle-right"></i>用户信息查看</a></li>

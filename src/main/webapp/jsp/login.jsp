@@ -59,12 +59,25 @@
 
                         <div class="login_icon"><img src="/js/images/login.png" /></div>
 
-                        <form class="">
+                        <form class="" action="/login/getLoginByName" method="post">
                             <fieldset>
                                 <ul>
-                                    <li class="frame_style form_error"><label class="user_icon"></label><input name="用户名" type="text"  id="username"/><i>用户名</i></li>
-                                    <li class="frame_style form_error"><label class="password_icon"></label><input name="密码" type="password"   id="userpwd"/><i>密码</i></li>
-                                    <li class="frame_style form_error"><label class="Codes_icon"></label><input name="验证码" type="text"   id="Codes_text"/><i>验证码</i><div class="Codes_region"></div></li>
+                                    <li class="frame_style form_error">
+                                        <label class="user_icon"></label>
+                                        <input name="uname" type="text"  id="username"/>
+                                        <i>用户名</i>
+                                    </li>
+                                    <li class="frame_style form_error">
+                                        <label class="password_icon"></label>
+                                        <input name="upwd" type="password"  id="userpwd"/>
+                                        <i>密码</i>
+                                    </li>
+                                    <%--<li class="frame_style form_error">
+                                        <label class="password_icon" th:text="${msg}"></label>
+
+
+                                    </li>--%>
+                                   <%-- <li class="frame_style form_error"><label class="Codes_icon"></label><input name="验证码" type="text"   id="Codes_text"/><i>验证码</i--%>><div class="Codes_region"></div></li>
 
                                 </ul>
                                 <div class="space"></div>
@@ -75,7 +88,7 @@
                                         <span class="lbl">保存密码</span>
                                     </label>
 
-                                    <button type="button" class="width-35 pull-right btn btn-sm btn-primary" id="login_btn">
+                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" id="login_btn">
                                         <i class="icon-key"></i>
                                         登录
                                     </button>

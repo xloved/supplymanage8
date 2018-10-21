@@ -14,6 +14,7 @@ import com.supply.supplymanage.biz.UserBiz;
 import com.supply.supplymanage.entity.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -30,16 +31,16 @@ public class UserController {
     @ResponseBody
     public Users addUser( Users users){
         UserBiz.addUser(users);
-        System.out.println(users);
+        //System.out.println(users);
         return users;
     }
 
     @RequestMapping("/QueryUsers/{pageNum}")
     @ResponseBody
-    public PageInfo QueryUser(@PathVariable("pageNum") int pageNum){
+    public PageInfo QueryUsers(@PathVariable("pageNum") int pageNum){
         System.out.println(pageNum);
         PageInfo pageInfo = UserBiz.QuerysUser(pageNum);
-        System.out.println(pageInfo);
+        //System.out.println(pageInfo);
          return pageInfo;
     }
 
@@ -47,13 +48,21 @@ public class UserController {
     @ResponseBody
     public String delUsers(@PathVariable("usersid") int usersid){
         UserBiz.delUser(usersid);
-        System.out.println("bianhao"+UserBiz.delUser(usersid));
+        //System.out.println("bianhao"+UserBiz.delUser(usersid));
         return "forward:QueryUsers";
     }
 
-    @RequestMapping("/queryOne")
-    public @ResponseBody Users queryOne(Integer usersid){
-          UserBiz.selectOne(usersid);
-        return null;
+    @RequestMapping("/queryOne/{usersid}")
+    public @ResponseBody Users queryOne(@PathVariable("usersid") Integer usersid){
+        Users users = UserBiz.selectOne(usersid);
+        //System.out.println("编号"+usersid);
+        return users;
+    }
+
+    @RequestMapping("/updUser")
+    public  @ResponseBody Users updUser(Users users){
+          //System.out.println("123");
+          UserBiz.updateUser(users);
+         return users;
     }
 }

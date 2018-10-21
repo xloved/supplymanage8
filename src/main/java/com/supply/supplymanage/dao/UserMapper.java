@@ -23,7 +23,7 @@ public interface UserMapper {
 
         int delUser(Integer usersid);
 
-        void updateUser(Users users);
+        int updateUser(Users users);
 
         Users queryOne(Integer usersid);
 

@@ -46,8 +46,9 @@ public class UserBizImpl implements UserBiz{
     }
 
     @Override
-    public void updateUser(Users users) {
+    public int updateUser(Users users) {
       UserMapper.updateUser(users);
+      return 0;
     }
 
     @Override

@@ -20,7 +20,7 @@ public interface UserBiz {
 
      int delUser(Integer usersid);
 
-     void updateUser(Users users);
+     int updateUser(Users users);
 
      Users selectOne(Integer usersid);
 
